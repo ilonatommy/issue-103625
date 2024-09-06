@@ -54,8 +54,8 @@ stages:
 
     - pwsh: |
       cp $(Build.SourcesDirectory)\testconsole01\obj\Release\net9.0\browser-wasm\wasm\for-publish\emcc-link.rsp $(Build.ArtifactStagingDirectory)\emcc-link.rsp
-      cp C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\9.0.0-rc.2.24455.13\runtimes\browser-wasm\native\src\emcc-link.rsp $(Build.ArtifactStagingDirectory)\pack-emcc-link.rsp
-      cp C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\9.0.0-rc.2.24455.13\runtimes\browser-wasm\native\src\emcc-default.rsp $(Build.ArtifactStagingDirectory)\pack-emcc-default.rsp
+      cp "C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\9.0.0-rc.2.24455.13\runtimes\browser-wasm\native\src\emcc-link.rsp" $(Build.ArtifactStagingDirectory)\pack-emcc-link.rsp
+      cp "C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\9.0.0-rc.2.24455.13\runtimes\browser-wasm\native\src\emcc-default.rsp" $(Build.ArtifactStagingDirectory)\pack-emcc-default.rsp
 
     displayName: 'Copy emcc-link.rsp to Artifact Staging Directory'
 
