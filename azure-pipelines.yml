@@ -45,6 +45,15 @@ stages:
 
       displayName: Setup Workloads
 
+    - pwsh: |
+        $longPathsEnabled = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -ErrorAction SilentlyContinue
+        if ($null -eq $longPathsEnabled) {
+          Write-Output "LongPathsEnabled registry key not found."
+        } else {
+          Write-Output "LongPathsEnabled: $($longPathsEnabled.LongPathsEnabled)"
+        }
+      displayName: 'Check Long Path Settings'
+
     - pwsh: dotnet new wasmconsole -o testconsole01 -f net9.0
     
     - pwsh: |
